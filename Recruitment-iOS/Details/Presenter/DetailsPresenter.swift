@@ -22,8 +22,16 @@ class DetailsPresenter: BasePresenter {
     
     func viewLoaded() {
         self.view?.setBackroundColor(color: model.color)
-        self.view?.setTitle(title: getFormatted(title: model.name))
-        //self.interactor.
+        self.view?.setTitle(with: getFormatted(title: model.name))
+        self.interactor.fetchItemWith(id: model.id) { (item) in
+            
+            if let descriptionText = item?.desc {
+                self.view?.setDescriptionWith(text: descriptionText)
+                return
+            }
+           
+            self.view?.showOkAlertController(title: "Error", message: "Error during item loading", callback: nil)
+        }
     }
     
     private func getFormatted(title: String) -> String {

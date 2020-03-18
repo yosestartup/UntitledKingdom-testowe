@@ -9,7 +9,9 @@
 import UIKit
 
 protocol DetailsViewProtocol: class {
-    func setTitle(title: String)
+    func showOkAlertController(title: String?, message: String?, callback: (() -> Void)?)
+    func setTitle(with: String)
+    func setDescriptionWith(text: String)
     func setBackroundColor(color: UIColor)
 }
 
@@ -19,5 +21,7 @@ protocol DetailsPresenterProtocol: class {
     func viewLoaded()
 }
 
-protocol DetailsInteractorProtocol: class { }
+protocol DetailsInteractorProtocol: class {
+    func fetchItemWith(id: String, completion: @escaping (ItemDetailsModel?) -> Void)
+}
 

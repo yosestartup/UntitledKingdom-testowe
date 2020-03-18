@@ -12,7 +12,7 @@ import SnapKit
 class DetailsViewController: BaseViewController {
 
     var presenter: DetailsPresenterProtocol!
-    private var textLabel: UILabel = UILabel()
+    private var descriptionLabel: UILabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,21 +22,28 @@ class DetailsViewController: BaseViewController {
     
     private func createUI() {
         
-        self.view.addSubview(self.textLabel)
+        self.view.addSubview(self.descriptionLabel)
         
-        self.textLabel.text = "Loading..."
-        self.textLabel.snp.makeConstraints { (make) in
+        self.descriptionLabel.text = "Loading..."
+        self.descriptionLabel.numberOfLines = 0
+        self.descriptionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.left.equalToSuperview()
+            make.right.equalToSuperview()
         }
     }
 }
+
 extension DetailsViewController: DetailsViewProtocol {
+    func setDescriptionWith(text: String) {
+        self.descriptionLabel.text = text
+    }
+    
     func setBackroundColor(color: UIColor) {
         self.view.backgroundColor = color
     }
     
-    func setTitle(title: String) {
+    func setTitle(with title: String) {
         self.title = title
     }
 }
