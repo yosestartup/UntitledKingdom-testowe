@@ -8,11 +8,16 @@
 
 import UIKit
 
-protocol DetailsViewProtocol: class { }
+protocol DetailsViewProtocol: class {
+    func setTitle(title: String)
+    func setBackroundColor(color: UIColor)
+}
 
 protocol DetailsWireFrameProtocol: class { }
 
-protocol DetailsPresenterProtocol: class { }
+protocol DetailsPresenterProtocol: class {
+    func viewLoaded()
+}
 
 protocol DetailsInteractorProtocol: class { }
 

@@ -9,9 +9,9 @@
 import UIKit
 
 class CollectionWireFrame: BaseWireFrame, CollectionWireFrameProtocol {
-    func presentDetailsScreen(from view: CollectionViewProtocol?) {
+    func presentDetailsScreen(model: ItemModel, from view: CollectionViewProtocol?) {
         guard let fromView = view as? UIViewController else { return }
-        let viewController = self.resolver.presentDetailsViewController()
+        let viewController = self.resolver.presentDetailsViewController(model: model)
         fromView.navigationController?.pushViewController(viewController, animated: true)
     }
 }

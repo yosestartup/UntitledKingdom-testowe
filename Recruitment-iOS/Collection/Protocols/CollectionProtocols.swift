@@ -11,7 +11,7 @@ import UIKit
 protocol CollectionViewProtocol: class { }
 
 protocol CollectionWireFrameProtocol: class {
-    func presentDetailsScreen(from: CollectionViewProtocol?)
+    func presentDetailsScreen(model: ItemModel, from: CollectionViewProtocol?)
 }
 
 protocol CollectionPresenterProtocol: class {

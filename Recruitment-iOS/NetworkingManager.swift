@@ -8,26 +8,18 @@
 
 import UIKit
 
-protocol NetworkingManagerDelegate {
-    
-    func downloadedItems(_ items:[ItemModel])
-    func downloadedItemDetails(_ itemDetails:ItemDetailsModel)
-    
-}
-
 class NetworkingManager: NSObject {
 
     static var sharedManager = NetworkingManager()
     
-    var delegate:NetworkingManagerDelegate?
-    
-    func downloadItems() {
+    func downloadItems(completion: @escaping([ItemModel]?) -> Void) {
         request(filename: "Items.json") { dictionary in
             let data = dictionary["data"]
             let array = data as! Array<Dictionary<String, AnyObject>>
             var result:[ItemModel] = []
             for item in array {
                 let name = item["attributes"]?["name"] as? String
+                let preview = item["attributes"]?["preview"] as? String
                 let colorString = item["attributes"]?["color"] as? String
                 var color:UIColor?
                 switch colorString! {
@@ -38,14 +30,15 @@ class NetworkingManager: NSObject {
                 case "Purple": color = UIColor.purple
                 default: color = UIColor.black
                 }
-                let itemModel = ItemModel(name: name!, color: color!)
+                let itemModel = ItemModel(name: name!, preview: preview!, color: color!)
                 result.append(itemModel)
             }
-            self.delegate?.downloadedItems(result)
+            completion(result)
+      //      self.delegate?.downloadedItems(result)
         }
     }
     
-    func downloadItemWithID(_ id:String) {
+    func downloadItemWithID(_ id:String, completion: @escaping(ItemDetailsModel?) -> Void) {
         let filename = "Item\(id).json"
         request(filename: filename) { dictionary in
             let data = dictionary["data"]
@@ -62,8 +55,9 @@ class NetworkingManager: NSObject {
             default: color = UIColor.black
             }
             let desc = attributes["desc"] as? String
-            let itemModelDetails = ItemDetailsModel(name: name!, color: color!, desc: desc!)
-            self.delegate?.downloadedItemDetails(itemModelDetails)
+            let itemModelDetails = ItemDetailsModel(name: name!, preview: "", color: color!, desc: desc!)
+            completion(itemModelDetails)
+        //    self.delegate?.downloadedItemDetails(itemModelDetails)
         }
     }
     

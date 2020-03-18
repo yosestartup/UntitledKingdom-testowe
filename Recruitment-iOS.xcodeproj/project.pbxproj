@@ -59,6 +59,7 @@
 		B1906B602422431C000DAA5B /* DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B5F2422431B000DAA5B /* DIResolver.swift */; };
 		B1906B6624225361000DAA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1906B6524225361000DAA5B /* LaunchScreen.storyboard */; };
 		B1906B68242253C8000DAA5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B67242253C8000DAA5B /* SceneDelegate.swift */; };
+		B1906B6A24227A99000DAA5B /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B6924227A99000DAA5B /* TableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		B1906B5F2422431B000DAA5B /* DIResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIResolver.swift; sourceTree = "<group>"; };
 		B1906B6524225361000DAA5B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1906B67242253C8000DAA5B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B1906B6924227A99000DAA5B /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		E12339FCE5BCA1DAB5280CC3 /* Pods_Recruitment_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recruitment_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -305,6 +307,7 @@
 		B1906B1324223899000DAA5B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B1906B6924227A99000DAA5B /* TableDataSource.swift */,
 				B1906B1424223899000DAA5B /* TableViewController.swift */,
 			);
 			path = View;
@@ -659,6 +662,7 @@
 				B1906B3D242238D1000DAA5B /* DetailsPresenter.swift in Sources */,
 				B1906B5C2422426A000DAA5B /* BaseViewController.swift in Sources */,
 				B1906B522422396B000DAA5B /* TabBarViewController.swift in Sources */,
+				B1906B6A24227A99000DAA5B /* TableDataSource.swift in Sources */,
 				B1906B1E24223899000DAA5B /* TableInteractor.swift in Sources */,
 				B1906B2C242238C5000DAA5B /* CollectionWireFrame.swift in Sources */,
 				B1906B0724223877000DAA5B /* StartScreenPresenter.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsTempViewController: UIViewController, NetworkingManagerDelegate {
+class DetailsTempViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     
@@ -34,8 +34,8 @@ class DetailsTempViewController: UIViewController, NetworkingManagerDelegate {
         self.title = newTitle
         //self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
         
-        NetworkingManager.sharedManager.delegate = self
-        NetworkingManager.sharedManager.downloadItemWithID("1")
+       // NetworkingManager.sharedManager.delegate = self
+       // NetworkingManager.sharedManager.downloadItemWithID("1")
     }
     
     func downloadedItems(_ items: [ItemModel]) {

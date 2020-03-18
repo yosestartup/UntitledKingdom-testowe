@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TableTempViewController: UITableViewController, NetworkingManagerDelegate {
+class TableTempViewController: UITableViewController {
     
     var itemModels:[ItemModel] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NetworkingManager.sharedManager.delegate = self
-        NetworkingManager.sharedManager.downloadItems()
+    //NetworkingManager.sharedManager.delegate = self
+      //  NetworkingManager.sharedManager.downloadItems()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

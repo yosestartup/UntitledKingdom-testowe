@@ -8,4 +8,10 @@
 
 class TableInteractor: BaseInteractor { }
 
-extension TableInteractor: TableInteractorProtocol { }
+extension TableInteractor: TableInteractorProtocol {
+    func fetchList(completion: @escaping ([ItemModel]?) -> Void) {
+        self.networkController.downloadItems(completion: completion)
+    }
+}
+
+

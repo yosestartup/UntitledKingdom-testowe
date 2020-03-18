@@ -20,7 +20,16 @@ class TablePresenter: BasePresenter {
 }
 
 extension TablePresenter: TablePresenterProtocol {
-    func didClickRow() {
-        self.wireFrame.presentDetailsScreen(from: self.view)
+    func didClickCellAt(row: Int) {
+        if let model = self.view?.getModelBy(index: row) {
+            self.wireFrame.presentDetailsScreen(model: model, from: self.view)
+        }
     }
+    
+    func viewLoaded() {
+        self.interactor.fetchList { (models) in
+            self.view?.insertModels(models: models ?? [])
+        }
+    }
+
 }

@@ -11,11 +11,30 @@ class DetailsPresenter: BasePresenter {
     weak var view: DetailsViewProtocol?
     private var wireFrame: DetailsWireFrameProtocol
     private var interactor: DetailsInteractorProtocol
-
-    init(view: DetailsViewProtocol, wireFrame: DetailsWireFrameProtocol, interactor: DetailsInteractorProtocol) {
+    private var model: ItemModel
+    
+    init(model: ItemModel, view: DetailsViewProtocol, wireFrame: DetailsWireFrameProtocol, interactor: DetailsInteractorProtocol) {
         self.view = view
         self.interactor = interactor
         self.wireFrame = wireFrame
+        self.model = model
+    }
+    
+    func viewLoaded() {
+        self.view?.setBackroundColor(color: model.color)
+        self.view?.setTitle(title: getFormatted(title: model.name))
+        //self.interactor.
+    }
+    
+    private func getFormatted(title: String) -> String {
+        var newTitle = ""
+        
+        for (index, letter) in title.enumerated() {
+              let newLetter = index % 2 == 0 ? String(letter).uppercased() : String(letter).lowercased()
+              newTitle += newLetter
+        }
+        
+        return newTitle
     }
 }
 

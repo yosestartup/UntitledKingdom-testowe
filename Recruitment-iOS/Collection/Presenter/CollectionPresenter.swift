@@ -21,6 +21,6 @@ class CollectionPresenter: BasePresenter {
 
 extension CollectionPresenter: CollectionPresenterProtocol {
     func didClickRow() {
-        self.wireFrame.presentDetailsScreen(from: self.view)
+        //self.wireFrame.presentDetailsScreen(model: model, from: self.view)
     }
 }

@@ -30,7 +30,7 @@ class CollectionViewController: BaseViewController {
         self.view.addSubview(self.startButton)
 
         self.startButton.setTitle("START", for: .normal)
-        self.startButton.addTarget(self, action: #selector(didClickRow), for: .touchUpInside)
+        //self.startButton.addTarget(self, action: #selector(didClickAtCell), for: .touchUpInside)
         //self.startButton.setTitleColor(UIColor.lightText, for: .normal)
         self.startButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()

@@ -8,15 +8,21 @@
 
 import UIKit
 
-protocol TableViewProtocol: class { }
+protocol TableViewProtocol: class {
+    func insertModels(models: [ItemModel])
+    func getModelBy(index: Int) -> ItemModel?
+}
 
 protocol TableWireFrameProtocol: class {
-    func presentDetailsScreen(from: TableViewProtocol?)
+    func presentDetailsScreen(model: ItemModel, from: TableViewProtocol?)
 }
 
 protocol TablePresenterProtocol: class {
-    func didClickRow()
+    func viewLoaded()
+    func didClickCellAt(row: Int)
 }
 
-protocol TableInteractorProtocol: class { }
+protocol TableInteractorProtocol: class {
+    func fetchList(completion: @escaping ([ItemModel]?) -> Void)
+}
 

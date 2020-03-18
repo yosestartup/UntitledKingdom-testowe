@@ -11,10 +11,12 @@ import UIKit
 class ItemModel {
 
     var name:String
+    var preview: String
     var color:UIColor
     
-    init(name:String, color:UIColor) {
+    init(name:String, preview: String, color:UIColor) {
         self.name  = name
+        self.preview = preview
         self.color = color
     }
     
