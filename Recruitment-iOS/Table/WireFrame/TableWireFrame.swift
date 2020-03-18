@@ -9,9 +9,9 @@
 import UIKit
 
 class TableWireFrame: BaseWireFrame, TableWireFrameProtocol {
-    //func presentSomeViewController(from view: TableViewProtocol) {
-    //    guard let fromView = view as? UIViewController else { return }
-    //    let viewController = self.resolver.someViewController()
-    //    fromView.navigationController?.pushViewController(viewController, animated: true)
-    //}
+    func presentDetailsScreen(from view: TableViewProtocol?) {
+        guard let fromView = view as? UIViewController else { return }
+        let viewController = self.resolver.presentDetailsViewController()
+        fromView.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

@@ -10,9 +10,13 @@ import UIKit
 
 protocol TableViewProtocol: class { }
 
-protocol TableWireFrameProtocol: class { }
+protocol TableWireFrameProtocol: class {
+    func presentDetailsScreen(from: TableViewProtocol?)
+}
 
-protocol TablePresenterProtocol: class { }
+protocol TablePresenterProtocol: class {
+    func didClickRow()
+}
 
 protocol TableInteractorProtocol: class { }
 

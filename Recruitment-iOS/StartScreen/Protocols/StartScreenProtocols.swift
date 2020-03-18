@@ -10,9 +10,13 @@ import UIKit
 
 protocol StartScreenViewProtocol: class { }
 
-protocol StartScreenWireFrameProtocol: class { }
+protocol StartScreenWireFrameProtocol: class {
+    func presentTabBarScreen(from: StartScreenViewProtocol?)
+}
 
-protocol StartScreenPresenterProtocol: class { }
+protocol StartScreenPresenterProtocol: class {
+    func didClickStartButton()
+}
 
 protocol StartScreenInteractorProtocol: class { }
 

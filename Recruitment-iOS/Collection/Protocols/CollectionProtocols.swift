@@ -10,9 +10,13 @@ import UIKit
 
 protocol CollectionViewProtocol: class { }
 
-protocol CollectionWireFrameProtocol: class { }
+protocol CollectionWireFrameProtocol: class {
+    func presentDetailsScreen(from: CollectionViewProtocol?)
+}
 
-protocol CollectionPresenterProtocol: class { }
+protocol CollectionPresenterProtocol: class {
+    func didClickRow()
+}
 
 protocol CollectionInteractorProtocol: class { }
 

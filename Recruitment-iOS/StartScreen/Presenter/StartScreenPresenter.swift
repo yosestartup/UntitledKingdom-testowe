@@ -19,4 +19,8 @@ class StartScreenPresenter: BasePresenter {
     }
 }
 
-extension StartScreenPresenter: StartScreenPresenterProtocol { }
+extension StartScreenPresenter: StartScreenPresenterProtocol {
+    func didClickStartButton() {
+        self.wireFrame.presentTabBarScreen(from: self.view)
+    }
+}

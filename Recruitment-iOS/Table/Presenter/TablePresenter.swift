@@ -19,4 +19,8 @@ class TablePresenter: BasePresenter {
     }
 }
 
-extension TablePresenter: TablePresenterProtocol { }
+extension TablePresenter: TablePresenterProtocol {
+    func didClickRow() {
+        self.wireFrame.presentDetailsScreen(from: self.view)
+    }
+}

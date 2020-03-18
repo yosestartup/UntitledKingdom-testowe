@@ -21,7 +21,8 @@ class DetailsViewController: BaseViewController {
 
 
     private func createUI() {
-
+        
+        
     }
 }
 extension DetailsViewController: DetailsViewProtocol { }

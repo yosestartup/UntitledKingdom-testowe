@@ -10,12 +10,12 @@ import UIKit
 
 // MARK: - TabBar
 protocol TabBarProtocol {
-    func presentTabBarViewController() -> UIViewController
+    func presentTabBarViewController(resolver: DIResolver) -> UIViewController
 }
 
 extension DIResolver: TabBarProtocol {
-    func presentTabBarViewController() -> UIViewController {
-        let viewController = TabBarViewController()
+    func presentTabBarViewController(resolver: DIResolver) -> UIViewController {
+        let viewController = TabBarViewController(resolver: resolver)
         let interactor = TabBarInteractor(networkController: self.networkController)
         let wireFrame = TabBarWireFrame(resolver: self)
         let presenter = TabBarPresenter(view: viewController, wireFrame: wireFrame, interactor: interactor)

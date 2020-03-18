@@ -9,9 +9,9 @@
 import UIKit
 
 class StartScreenWireFrame: BaseWireFrame, StartScreenWireFrameProtocol {
-    //func presentSomeViewController(from view: testViewProtocol) {
-    //    guard let fromView = view as? UIViewController else { return }
-    //    let viewController = self.resolver.someViewController()
-    //    fromView.navigationController?.pushViewController(viewController, animated: true)
-    //}
+    func presentTabBarScreen(from view: StartScreenViewProtocol?) {
+        guard let fromView = view as? UIViewController else { return }
+        let viewController = self.resolver.presentTabBarViewController(resolver: self.resolver)
+        fromView.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

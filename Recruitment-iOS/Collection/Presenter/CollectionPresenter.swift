@@ -19,4 +19,8 @@ class CollectionPresenter: BasePresenter {
     }
 }
 
-extension CollectionPresenter: CollectionPresenterProtocol { }
+extension CollectionPresenter: CollectionPresenterProtocol {
+    func didClickRow() {
+        self.wireFrame.presentDetailsScreen(from: self.view)
+    }
+}
