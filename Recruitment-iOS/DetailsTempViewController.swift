@@ -8,14 +8,21 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, NetworkingManagerDelegate {
+class DetailsTempViewController: UIViewController, NetworkingManagerDelegate {
     
     @IBOutlet weak var textView: UITextView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let tableViewController = navigationController?.viewControllers[0] as! TableTempViewController
+        let selectedIndex = tableViewController.tableView.indexPathForSelectedRow?.row ?? 0
+        self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
+
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let tableViewController = navigationController?.viewControllers[0] as! TableViewController
+        let tableViewController = navigationController?.viewControllers[0] as! TableTempViewController
         let selectedIndex = tableViewController.tableView.indexPathForSelectedRow?.row ?? 0
         let title = tableViewController.itemModels[selectedIndex].name
         var newTitle = ""
@@ -25,7 +32,7 @@ class DetailsViewController: UIViewController, NetworkingManagerDelegate {
         }
         
         self.title = newTitle
-        self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
+        //self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
         
         NetworkingManager.sharedManager.delegate = self
         NetworkingManager.sharedManager.downloadItemWithID("1")

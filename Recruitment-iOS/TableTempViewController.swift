@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, NetworkingManagerDelegate {
+class TableTempViewController: UITableViewController, NetworkingManagerDelegate {
     
     var itemModels:[ItemModel] = []
     

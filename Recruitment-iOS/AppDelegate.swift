@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         
+        let networkManager = NetworkingManager.sharedManager
+
+        let resolver = DIResolver(networkController: networkManager)
+        let startScreenController = resolver.presentStartScreenViewController()
+        let navigationController = UINavigationController(rootViewController: startScreenController)
+        
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
     }
 
 }
