@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A4802C381D8ACB320032AF25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C321D8ACB320032AF25 /* AppDelegate.swift */; };
 		A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4802C341D8ACB320032AF25 /* Assets.xcassets */; };
-		A4802C3B1D8ACB320032AF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */; };
 		A4802C3C1D8ACB320032AF25 /* TableTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C361D8ACB320032AF25 /* TableTempViewController.swift */; };
 		A4802C3D1D8ACB320032AF25 /* DetailsTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C371D8ACB320032AF25 /* DetailsTempViewController.swift */; };
 		A4802C461D8ACB7B0032AF25 /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = A4802C401D8ACB7B0032AF25 /* Items.json */; };
@@ -58,6 +57,8 @@
 		B1906B5D2422426A000DAA5B /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B592422426A000DAA5B /* BaseInteractor.swift */; };
 		B1906B5E2422426A000DAA5B /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B5A2422426A000DAA5B /* BasePresenter.swift */; };
 		B1906B602422431C000DAA5B /* DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B5F2422431B000DAA5B /* DIResolver.swift */; };
+		B1906B6624225361000DAA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1906B6524225361000DAA5B /* LaunchScreen.storyboard */; };
+		B1906B68242253C8000DAA5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B67242253C8000DAA5B /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +68,6 @@
 		A4802C2A1D8ACA5F0032AF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4802C321D8ACB320032AF25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4802C341D8ACB320032AF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4802C361D8ACB320032AF25 /* TableTempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTempViewController.swift; sourceTree = "<group>"; };
 		A4802C371D8ACB320032AF25 /* DetailsTempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTempViewController.swift; sourceTree = "<group>"; };
 		A4802C401D8ACB7B0032AF25 /* Items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; };
@@ -115,6 +115,8 @@
 		B1906B592422426A000DAA5B /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		B1906B5A2422426A000DAA5B /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		B1906B5F2422431B000DAA5B /* DIResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIResolver.swift; sourceTree = "<group>"; };
+		B1906B6524225361000DAA5B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1906B67242253C8000DAA5B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E12339FCE5BCA1DAB5280CC3 /* Pods_Recruitment_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recruitment_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,8 +176,9 @@
 				B1906B562422426A000DAA5B /* BaseControllers */,
 				A4802C2A1D8ACA5F0032AF25 /* Info.plist */,
 				A4802C321D8ACB320032AF25 /* AppDelegate.swift */,
+				B1906B67242253C8000DAA5B /* SceneDelegate.swift */,
+				B1906B6524225361000DAA5B /* LaunchScreen.storyboard */,
 				A4802C341D8ACB320032AF25 /* Assets.xcassets */,
-				A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */,
 				A4802C361D8ACB320032AF25 /* TableTempViewController.swift */,
 				A4802C371D8ACB320032AF25 /* DetailsTempViewController.swift */,
 			);
@@ -565,9 +568,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4802C471D8ACB7B0032AF25 /* Item1.json in Resources */,
+				B1906B6624225361000DAA5B /* LaunchScreen.storyboard in Resources */,
 				A4802C461D8ACB7B0032AF25 /* Items.json in Resources */,
 				A4802C491D8ACB7B0032AF25 /* Item3.json in Resources */,
-				A4802C3B1D8ACB320032AF25 /* LaunchScreen.storyboard in Resources */,
 				A4802C481D8ACB7B0032AF25 /* Item2.json in Resources */,
 				A4802C4A1D8ACB7B0032AF25 /* Item4.json in Resources */,
 				A4802C4B1D8ACB7B0032AF25 /* Item5.json in Resources */,
@@ -628,6 +631,7 @@
 				B1906B0924223877000DAA5B /* StartScreen+DIResolver.swift in Sources */,
 				A4802C381D8ACB320032AF25 /* AppDelegate.swift in Sources */,
 				B1906B502422396B000DAA5B /* TabBarWireFrame.swift in Sources */,
+				B1906B68242253C8000DAA5B /* SceneDelegate.swift in Sources */,
 				A4802C511D8ACB840032AF25 /* JSONParser.swift in Sources */,
 				B1906B0A24223877000DAA5B /* StartScreenViewController.swift in Sources */,
 				B1906B30242238C5000DAA5B /* CollectionInteractor.swift in Sources */,
@@ -721,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -771,7 +775,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -786,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Recruitment-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.untitledkingdom.Recruitment-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,7 +807,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Recruitment-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.untitledkingdom.Recruitment-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
