@@ -19,7 +19,10 @@ class CollectionViewController: BaseViewController {
         self.createUI()
 
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.title = "Collection"
+    }
 
     private func createUI() {
         self.view.backgroundColor = UIColor.blue

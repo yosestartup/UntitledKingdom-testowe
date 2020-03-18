@@ -190,9 +190,9 @@
 			children = (
 				A4802C3F1D8ACB740032AF25 /* JSON */,
 				A4802C4C1D8ACB840032AF25 /* ItemModel.swift */,
+				A4802C4F1D8ACB840032AF25 /* ItemDetailsModel.swift */,
 				A4802C4D1D8ACB840032AF25 /* JSONParser.swift */,
 				A4802C4E1D8ACB840032AF25 /* NetworkingManager.swift */,
-				A4802C4F1D8ACB840032AF25 /* ItemDetailsModel.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
