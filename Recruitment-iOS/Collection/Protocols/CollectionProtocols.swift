@@ -8,15 +8,21 @@
 
 import UIKit
 
-protocol CollectionViewProtocol: class { }
+protocol CollectionViewProtocol: class {
+    func getModelBy(index: Int) -> ItemModel?
+    func insertModels(models: [ItemModel])
+}
 
 protocol CollectionWireFrameProtocol: class {
     func presentDetailsScreen(model: ItemModel, from: CollectionViewProtocol?)
 }
 
 protocol CollectionPresenterProtocol: class {
-    func didClickRow()
+    func viewLoaded()
+    func didClickCellAt(row: Int)
 }
 
-protocol CollectionInteractorProtocol: class { }
+protocol CollectionInteractorProtocol: class {
+    func fetchList(completion: @escaping ([ItemModel]?) -> Void)
+}
 

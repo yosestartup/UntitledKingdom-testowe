@@ -12,12 +12,14 @@ import SnapKit
 class CollectionViewController: BaseViewController {
 
     var presenter: CollectionPresenterProtocol!
-    private var startButton: UIButton = UIButton(type: .system)
-
+    private var collectionView: UICollectionView! = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    private let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+    private var dataSource: ItemsDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createUI()
-
+        self.presenter.viewLoaded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,21 +27,66 @@ class CollectionViewController: BaseViewController {
     }
 
     private func createUI() {
-        self.view.backgroundColor = UIColor.blue
         
-        self.view.addSubview(self.startButton)
+        let itemCellSize = CGSize(width: 150.withRatio(), height: 150.withRatio())
+        self.collectionViewLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        self.collectionViewLayout.itemSize = itemCellSize
+        self.collectionViewLayout.sectionInset = UIEdgeInsets(top: 15.withRatio(), left: 15.withRatio(), bottom: 15.withRatio(), right: 15.withRatio())
+        self.collectionViewLayout.minimumLineSpacing = 20.withRatio()
+        self.collectionViewLayout.minimumInteritemSpacing = 20.withRatio()
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.showsHorizontalScrollIndicator = false
+        self.collectionView.setCollectionViewLayout(self.collectionViewLayout, animated: true)
+        self.collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: "itemCell")
+        self.collectionView.backgroundColor = UIColor.white
+        self.collectionViewLayout.scrollDirection = .vertical;
 
-        self.startButton.setTitle("START", for: .normal)
-        //self.startButton.addTarget(self, action: #selector(didClickAtCell), for: .touchUpInside)
-        //self.startButton.setTitleColor(UIColor.lightText, for: .normal)
-        self.startButton.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+        
+        self.dataSource = ItemsDataSource()
+        self.dataSource.delegate = self
+        
+        self.view.addSubview(self.collectionView)
+        self.collectionView.snp.makeConstraints { (make) in
+            make.top.bottom.right.left.equalToSuperview()
         }
     }
     
-    @objc private func didClickRow() {
-         self.presenter.didClickRow()
-     }
+    func insertModels(models: [ItemModel]) {
+        self.dataSource.insertItems(models)
+    }
+    
+    deinit {
+        self.presenter = nil
+        self.collectionView = nil
+        self.dataSource = nil
+    }
+    
 }
-extension CollectionViewController: CollectionViewProtocol { }
+
+extension CollectionViewController: CollectionViewProtocol {
+    func getModelBy(index: Int) -> ItemModel? {
+        return self.dataSource.getModelBy(index: index)
+    }
+}
+
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.dataSource.getNumberOfItems(at: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return self.dataSource.getCell(for: collectionView, indexPath: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.presenter.didClickCellAt(row: indexPath.row)
+    }
+    
+}
+
+extension CollectionViewController: ItemsDataSourceDelegate {
+    func reloadData() {
+        self.collectionView.reloadData()
+    }
+}

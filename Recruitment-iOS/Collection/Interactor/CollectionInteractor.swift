@@ -8,4 +8,8 @@
 
 class CollectionInteractor: BaseInteractor { }
 
-extension CollectionInteractor: CollectionInteractorProtocol { }
+extension CollectionInteractor: CollectionInteractorProtocol {
+    func fetchList(completion: @escaping ([ItemModel]?) -> Void) {
+        self.networkController.downloadItems(completion: completion)
+    }
+}

@@ -60,7 +60,21 @@
 		B1906B6624225361000DAA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1906B6524225361000DAA5B /* LaunchScreen.storyboard */; };
 		B1906B68242253C8000DAA5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B67242253C8000DAA5B /* SceneDelegate.swift */; };
 		B1906B6A24227A99000DAA5B /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B6924227A99000DAA5B /* TableDataSource.swift */; };
+		B1906B6E2422C8DD000DAA5B /* ItemsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B6D2422C8DD000DAA5B /* ItemsDataSource.swift */; };
+		B1906B702422C9BF000DAA5B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B6F2422C9BF000DAA5B /* ItemCollectionViewCell.swift */; };
+		B1906B722422E798000DAA5B /* UI+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B712422E798000DAA5B /* UI+Extensions.swift */; };
+		B1906B802422F02A000DAA5B /* Recruitment_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906B7F2422F02A000DAA5B /* Recruitment_iOSTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1906B822422F02A000DAA5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4802C131D8ACA5F0032AF25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4802C1A1D8ACA5F0032AF25;
+			remoteInfo = "Recruitment-iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1BB05550411130D2E96C5293 /* Pods-Recruitment-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recruitment-iOS.release.xcconfig"; path = "Target Support Files/Pods-Recruitment-iOS/Pods-Recruitment-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +133,12 @@
 		B1906B6524225361000DAA5B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1906B67242253C8000DAA5B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1906B6924227A99000DAA5B /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		B1906B6D2422C8DD000DAA5B /* ItemsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDataSource.swift; sourceTree = "<group>"; };
+		B1906B6F2422C9BF000DAA5B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1906B712422E798000DAA5B /* UI+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extensions.swift"; sourceTree = "<group>"; };
+		B1906B7D2422F02A000DAA5B /* Recruitment-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Recruitment-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1906B7F2422F02A000DAA5B /* Recruitment_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruitment_iOSTests.swift; sourceTree = "<group>"; };
+		B1906B812422F02A000DAA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E12339FCE5BCA1DAB5280CC3 /* Pods_Recruitment_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recruitment_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +148,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5B93C7679A8E3275DF2534 /* Pods_Recruitment_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1906B7A2422F02A000DAA5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A4802C1D1D8ACA5F0032AF25 /* Recruitment-iOS */,
+				B1906B7E2422F02A000DAA5B /* Recruitment-iOSTests */,
 				A4802C1C1D8ACA5F0032AF25 /* Products */,
 				0FEDA5A8B723DC96F661CE42 /* Pods */,
 				682BE1D19F1B26813B91873D /* Frameworks */,
@@ -165,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				A4802C1B1D8ACA5F0032AF25 /* Recruitment-iOS.app */,
+				B1906B7D2422F02A000DAA5B /* Recruitment-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +206,7 @@
 				B1906AFA2422385F000DAA5B /* Modules */,
 				B1906B562422426A000DAA5B /* BaseControllers */,
 				A4802C2A1D8ACA5F0032AF25 /* Info.plist */,
+				B1906B712422E798000DAA5B /* UI+Extensions.swift */,
 				A4802C321D8ACB320032AF25 /* AppDelegate.swift */,
 				B1906B67242253C8000DAA5B /* SceneDelegate.swift */,
 				B1906B6524225361000DAA5B /* LaunchScreen.storyboard */,
@@ -361,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				B1906B26242238C5000DAA5B /* CollectionViewController.swift */,
+				B1906B6F2422C9BF000DAA5B /* ItemCollectionViewCell.swift */,
+				B1906B6D2422C8DD000DAA5B /* ItemsDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +541,15 @@
 			path = BaseControllers;
 			sourceTree = "<group>";
 		};
+		B1906B7E2422F02A000DAA5B /* Recruitment-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1906B7F2422F02A000DAA5B /* Recruitment_iOSTests.swift */,
+				B1906B812422F02A000DAA5B /* Info.plist */,
+			);
+			path = "Recruitment-iOSTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -531,19 +572,43 @@
 			productReference = A4802C1B1D8ACA5F0032AF25 /* Recruitment-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B1906B7C2422F02A000DAA5B /* Recruitment-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1906B842422F02A000DAA5B /* Build configuration list for PBXNativeTarget "Recruitment-iOSTests" */;
+			buildPhases = (
+				B1906B792422F02A000DAA5B /* Sources */,
+				B1906B7A2422F02A000DAA5B /* Frameworks */,
+				B1906B7B2422F02A000DAA5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1906B832422F02A000DAA5B /* PBXTargetDependency */,
+			);
+			name = "Recruitment-iOSTests";
+			productName = "Recruitment-iOSTests";
+			productReference = B1906B7D2422F02A000DAA5B /* Recruitment-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A4802C131D8ACA5F0032AF25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Untitled Kingdom";
 				TargetAttributes = {
 					A4802C1A1D8ACA5F0032AF25 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0920;
+					};
+					B1906B7C2422F02A000DAA5B = {
+						CreatedOnToolsVersion = 11.1;
+						DevelopmentTeam = 42HSZXZUT7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A4802C1A1D8ACA5F0032AF25;
 					};
 				};
 			};
@@ -561,6 +626,7 @@
 			projectRoot = "";
 			targets = (
 				A4802C1A1D8ACA5F0032AF25 /* Recruitment-iOS */,
+				B1906B7C2422F02A000DAA5B /* Recruitment-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -578,6 +644,13 @@
 				A4802C4A1D8ACB7B0032AF25 /* Item4.json in Resources */,
 				A4802C4B1D8ACB7B0032AF25 /* Item5.json in Resources */,
 				A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1906B7B2422F02A000DAA5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,12 +713,14 @@
 				B1906B30242238C5000DAA5B /* CollectionInteractor.swift in Sources */,
 				A4802C3C1D8ACB320032AF25 /* TableTempViewController.swift in Sources */,
 				B1906B4F2422396B000DAA5B /* TabBarPresenter.swift in Sources */,
+				B1906B6E2422C8DD000DAA5B /* ItemsDataSource.swift in Sources */,
 				B1906B0C24223877000DAA5B /* StartScreenInteractor.swift in Sources */,
 				A4802C521D8ACB840032AF25 /* NetworkingManager.swift in Sources */,
 				A4802C531D8ACB840032AF25 /* ItemDetailsModel.swift in Sources */,
 				B1906B532422396B000DAA5B /* TabBarProtocols.swift in Sources */,
 				B1906B42242238D1000DAA5B /* DetailsInteractor.swift in Sources */,
 				B1906B512422396B000DAA5B /* TabBar+DIResolver.swift in Sources */,
+				B1906B722422E798000DAA5B /* UI+Extensions.swift in Sources */,
 				B1906B0824223877000DAA5B /* StartScreenWireFrame.swift in Sources */,
 				B1906B542422396B000DAA5B /* TabBarInteractor.swift in Sources */,
 				A4802C501D8ACB840032AF25 /* ItemModel.swift in Sources */,
@@ -657,6 +732,7 @@
 				B1906B5B2422426A000DAA5B /* BaseWireFrame.swift in Sources */,
 				B1906B1B24223899000DAA5B /* Table+DIResolver.swift in Sources */,
 				B1906B1D24223899000DAA5B /* TableProtocols.swift in Sources */,
+				B1906B702422C9BF000DAA5B /* ItemCollectionViewCell.swift in Sources */,
 				B1906B1924223899000DAA5B /* TablePresenter.swift in Sources */,
 				B1906B602422431C000DAA5B /* DIResolver.swift in Sources */,
 				B1906B3D242238D1000DAA5B /* DetailsPresenter.swift in Sources */,
@@ -678,7 +754,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1906B792422F02A000DAA5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1906B802422F02A000DAA5B /* Recruitment_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1906B832422F02A000DAA5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4802C1A1D8ACA5F0032AF25 /* Recruitment-iOS */;
+			targetProxy = B1906B822422F02A000DAA5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A4802C2B1D8ACA5F0032AF25 /* Debug */ = {
@@ -820,6 +912,56 @@
 			};
 			name = Release;
 		};
+		B1906B852422F02A000DAA5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42HSZXZUT7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Recruitment-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "codequest.Recruitment-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recruitment-iOS.app/Recruitment-iOS";
+			};
+			name = Debug;
+		};
+		B1906B862422F02A000DAA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42HSZXZUT7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Recruitment-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "codequest.Recruitment-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recruitment-iOS.app/Recruitment-iOS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -837,6 +979,15 @@
 			buildConfigurations = (
 				A4802C2E1D8ACA5F0032AF25 /* Debug */,
 				A4802C2F1D8ACA5F0032AF25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1906B842422F02A000DAA5B /* Build configuration list for PBXNativeTarget "Recruitment-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1906B852422F02A000DAA5B /* Debug */,
+				B1906B862422F02A000DAA5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,3 +7,45 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ItemsDataSourceDelegate: class {
+    func reloadData()
+}
+
+class ItemsDataSource {
+    
+    private var items = [ItemModel]()
+
+    weak var delegate: ItemsDataSourceDelegate?
+    
+    func getNumbersOfSections() -> Int {
+        return 1
+    }
+
+    func getNumberOfItems(at section: Int) -> Int {
+        return self.items.count
+    }
+
+    func getModelBy(index: Int) -> ItemModel? {
+        return items[index]
+    }
+
+    func getCell(for collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as? ItemCollectionViewCell else { return UICollectionViewCell() }
+        let model = self.items[indexPath.row]
+        cell.display(model: model)
+        return cell
+    }
+    
+    func insertItems(_ items: [ItemModel]) {
+        self.updateWithItems(items)
+    }
+    
+    private func updateWithItems(_ items: [ItemModel]) {
+        self.items = items
+        DispatchQueue.main.async {
+           self.delegate?.reloadData()
+       }
+    }
+}

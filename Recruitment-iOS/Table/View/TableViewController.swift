@@ -12,7 +12,7 @@ import SnapKit
 class TableViewController: BaseViewController {
 
     var presenter: TablePresenterProtocol!
-    private var tableView = UITableView()
+    private var tableView: UITableView! = UITableView()
     private var dataSource: TableDataSource!
     
     override func viewDidLoad() {
@@ -44,6 +44,12 @@ class TableViewController: BaseViewController {
     
     func insertModels(models: [ItemModel]) {
         self.dataSource.insertItems(models)
+    }
+    
+    deinit {
+        self.presenter = nil
+        self.tableView = nil
+        self.dataSource = nil
     }
 }
 
