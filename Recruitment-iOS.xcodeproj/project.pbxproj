@@ -69,6 +69,7 @@
 		B1906BB624239336000DAA5B /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906BB524239336000DAA5B /* ItemModel.swift */; };
 		B1906BB824239346000DAA5B /* ItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906BB724239346000DAA5B /* ItemsList.swift */; };
 		B1906BBA2423A30A000DAA5B /* ItemApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906BB92423A30A000DAA5B /* ItemApiResponseModel.swift */; };
+		B1906BC22423C91D000DAA5B /* DataLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1906BC12423C91D000DAA5B /* DataLayerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,13 @@
 			remoteInfo = "Recruitment-iOS";
 		};
 		B1906B902422F53B000DAA5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4802C131D8ACA5F0032AF25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4802C1A1D8ACA5F0032AF25;
+			remoteInfo = "Recruitment-iOS";
+		};
+		B1906BC42423C91D000DAA5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4802C131D8ACA5F0032AF25 /* Project object */;
 			proxyType = 1;
@@ -158,6 +166,9 @@
 		B1906BB524239336000DAA5B /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		B1906BB724239346000DAA5B /* ItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsList.swift; sourceTree = "<group>"; };
 		B1906BB92423A30A000DAA5B /* ItemApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemApiResponseModel.swift; sourceTree = "<group>"; };
+		B1906BBF2423C91D000DAA5B /* DataLaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataLaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1906BC12423C91D000DAA5B /* DataLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayerTests.swift; sourceTree = "<group>"; };
+		B1906BC32423C91D000DAA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E12339FCE5BCA1DAB5280CC3 /* Pods_Recruitment_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recruitment_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -178,6 +189,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B1906B882422F53B000DAA5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1906BBC2423C91D000DAA5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,6 +228,7 @@
 				A4802C1D1D8ACA5F0032AF25 /* Recruitment-iOS */,
 				B1906B7E2422F02A000DAA5B /* Recruitment-iOSTests */,
 				B1906B8C2422F53B000DAA5B /* NetworkLayerTests */,
+				B1906BC02423C91D000DAA5B /* DataLaterTests */,
 				A4802C1C1D8ACA5F0032AF25 /* Products */,
 				0FEDA5A8B723DC96F661CE42 /* Pods */,
 				682BE1D19F1B26813B91873D /* Frameworks */,
@@ -222,6 +241,7 @@
 				A4802C1B1D8ACA5F0032AF25 /* Recruitment-iOS.app */,
 				B1906B7D2422F02A000DAA5B /* Recruitment-iOSTests.xctest */,
 				B1906B8B2422F53B000DAA5B /* NetworkLayerTests.xctest */,
+				B1906BBF2423C91D000DAA5B /* DataLaterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -615,6 +635,15 @@
 			name = BusinessModels;
 			sourceTree = "<group>";
 		};
+		B1906BC02423C91D000DAA5B /* DataLaterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1906BC12423C91D000DAA5B /* DataLayerTests.swift */,
+				B1906BC32423C91D000DAA5B /* Info.plist */,
+			);
+			path = DataLaterTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -673,6 +702,24 @@
 			productReference = B1906B8B2422F53B000DAA5B /* NetworkLayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B1906BBE2423C91D000DAA5B /* DataLaterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1906BC62423C91D000DAA5B /* Build configuration list for PBXNativeTarget "DataLaterTests" */;
+			buildPhases = (
+				B1906BBB2423C91D000DAA5B /* Sources */,
+				B1906BBC2423C91D000DAA5B /* Frameworks */,
+				B1906BBD2423C91D000DAA5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1906BC52423C91D000DAA5B /* PBXTargetDependency */,
+			);
+			name = DataLaterTests;
+			productName = DataLaterTests;
+			productReference = B1906BBF2423C91D000DAA5B /* DataLaterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -699,6 +746,12 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = A4802C1A1D8ACA5F0032AF25;
 					};
+					B1906BBE2423C91D000DAA5B = {
+						CreatedOnToolsVersion = 11.1;
+						DevelopmentTeam = 42HSZXZUT7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A4802C1A1D8ACA5F0032AF25;
+					};
 				};
 			};
 			buildConfigurationList = A4802C161D8ACA5F0032AF25 /* Build configuration list for PBXProject "Recruitment-iOS" */;
@@ -717,6 +770,7 @@
 				A4802C1A1D8ACA5F0032AF25 /* Recruitment-iOS */,
 				B1906B7C2422F02A000DAA5B /* Recruitment-iOSTests */,
 				B1906B8A2422F53B000DAA5B /* NetworkLayerTests */,
+				B1906BBE2423C91D000DAA5B /* DataLaterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -745,6 +799,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B1906B892422F53B000DAA5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1906BBD2423C91D000DAA5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -871,6 +932,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1906BBB2423C91D000DAA5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1906BC22423C91D000DAA5B /* DataLayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -883,6 +952,11 @@
 			isa = PBXTargetDependency;
 			target = A4802C1A1D8ACA5F0032AF25 /* Recruitment-iOS */;
 			targetProxy = B1906B902422F53B000DAA5B /* PBXContainerItemProxy */;
+		};
+		B1906BC52423C91D000DAA5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4802C1A1D8ACA5F0032AF25 /* Recruitment-iOS */;
+			targetProxy = B1906BC42423C91D000DAA5B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1126,6 +1200,56 @@
 			};
 			name = Release;
 		};
+		B1906BC72423C91D000DAA5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42HSZXZUT7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DataLaterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = codequest.DataLaterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recruitment-iOS.app/Recruitment-iOS";
+			};
+			name = Debug;
+		};
+		B1906BC82423C91D000DAA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42HSZXZUT7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DataLaterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = codequest.DataLaterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recruitment-iOS.app/Recruitment-iOS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1161,6 +1285,15 @@
 			buildConfigurations = (
 				B1906B932422F53B000DAA5B /* Debug */,
 				B1906B942422F53B000DAA5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1906BC62423C91D000DAA5B /* Build configuration list for PBXNativeTarget "DataLaterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1906BC72423C91D000DAA5B /* Debug */,
+				B1906BC82423C91D000DAA5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

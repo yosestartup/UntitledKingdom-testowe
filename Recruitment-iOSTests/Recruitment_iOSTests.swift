@@ -7,11 +7,14 @@
 //
 
 import XCTest
+@testable import Recruitment_iOS
 
 class Recruitment_iOSTests: XCTestCase {
-
+    
+    let netManager = NetworkingManager.sharedManager
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
 
     override func tearDown() {
