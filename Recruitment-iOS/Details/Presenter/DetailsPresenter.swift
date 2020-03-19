@@ -11,9 +11,9 @@ class DetailsPresenter: BasePresenter {
     weak var view: DetailsViewProtocol?
     private var wireFrame: DetailsWireFrameProtocol
     private var interactor: DetailsInteractorProtocol
-    private var model: ItemModel
+    private var model: ItemData
     
-    init(model: ItemModel, view: DetailsViewProtocol, wireFrame: DetailsWireFrameProtocol, interactor: DetailsInteractorProtocol) {
+    init(model: ItemData, view: DetailsViewProtocol, wireFrame: DetailsWireFrameProtocol, interactor: DetailsInteractorProtocol) {
         self.view = view
         self.interactor = interactor
         self.wireFrame = wireFrame
@@ -21,16 +21,23 @@ class DetailsPresenter: BasePresenter {
     }
     
     func viewLoaded() {
-        self.view?.setBackroundColor(color: model.color)
-        self.view?.setTitle(with: getFormatted(title: model.name))
-        self.interactor.fetchItemWith(id: model.id) { (item) in
+        self.view?.setBackroundColor(color: model.attributes.color)
+        self.view?.setTitle(with: getFormatted(title: model.attributes.name))
+        self.interactor.fetchItemWith(id: model.id) { model, error in
             
-            if let descriptionText = item?.desc {
-                self.view?.setDescriptionWith(text: descriptionText)
+               if let error = error {
+                 self.view?.showOkAlertController(title: "Error", message: error.localizedDescription, callback: nil)
+                 return
+               }
+                 
+               if let model = model {
+                let convertedItem = ItemModel.convert(from: model)
+                self.view?.setDescriptionWith(text: convertedItem.data.attributes.desc ?? "")
                 return
+               
             }
            
-            self.view?.showOkAlertController(title: "Error", message: "Error during item loading", callback: nil)
+            self.view?.showOkAlertController(title: "Error", message: "Unexpected error", callback: nil)
         }
     }
     

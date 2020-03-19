@@ -10,11 +10,11 @@ import UIKit
 
 // MARK: - Details
 protocol DetailsProtocol {
-    func presentDetailsViewController(model: ItemModel) -> UIViewController
+    func presentDetailsViewController(model: ItemData) -> UIViewController
 }
 
 extension DIResolver: DetailsProtocol {
-    func presentDetailsViewController(model: ItemModel) -> UIViewController {
+    func presentDetailsViewController(model: ItemData) -> UIViewController {
         let viewController = DetailsViewController()
         let interactor = DetailsInteractor(networkController: self.networkController)
         let wireFrame = DetailsWireFrame(resolver: self)

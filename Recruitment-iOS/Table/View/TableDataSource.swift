@@ -15,11 +15,11 @@ protocol TableDataSourceDelegate: class {
 
 class TableDataSource {
     
-    private var items = [ItemModel]()
+    private var items = [ItemData]()
     
     weak var delegate: TableDataSourceDelegate?
     
-    func getModelBy(index: Int) -> ItemModel? {
+    func getModelBy(index: Int) -> ItemData? {
         return items[index]
     }
     
@@ -30,19 +30,19 @@ class TableDataSource {
     func getCell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell =  UITableViewCell(style: .subtitle, reuseIdentifier: "CellId")
         
-        let itemModel = items[indexPath.row]
-        cell.backgroundColor = itemModel.color
-        cell.textLabel?.text = itemModel.name
-        cell.detailTextLabel?.text = itemModel.preview
+        let itemData = items[indexPath.row]
+        cell.backgroundColor = itemData.attributes.color
+        cell.textLabel?.text = itemData.attributes.name
+        cell.detailTextLabel?.text = itemData.attributes.preview
         cell.detailTextLabel?.numberOfLines = 0
         return cell ?? UITableViewCell()
     }
     
-    func insertItems(_ items: [ItemModel]) {
+    func insertItems(_ items: [ItemData]) {
         self.updateWithItems(items)
     }
     
-    private func updateWithItems(_ items: [ItemModel]) {
+    private func updateWithItems(_ items: [ItemData]) {
         self.items = items
         DispatchQueue.main.async {
            self.delegate?.reloadData()

@@ -22,6 +22,6 @@ protocol DetailsPresenterProtocol: class {
 }
 
 protocol DetailsInteractorProtocol: class {
-    func fetchItemWith(id: String, completion: @escaping (ItemDetailsModel?) -> Void)
+    func fetchItemWith(id: String, completion: @escaping (ItemApiResponseModel?, Error?) -> Void)
 }
 

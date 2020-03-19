@@ -9,7 +9,7 @@
 class DetailsInteractor: BaseInteractor { }
 
 extension DetailsInteractor: DetailsInteractorProtocol {
-    func fetchItemWith(id: String, completion: @escaping (ItemDetailsModel?) -> Void) {
+    func fetchItemWith(id: String, completion: @escaping (ItemApiResponseModel?, Error?) -> Void) {
         self.networkController.downloadItemWithID(id, completion: completion)
     }
 }

@@ -52,7 +52,7 @@ class CollectionViewController: BaseViewController {
         }
     }
     
-    func insertModels(models: [ItemModel]) {
+    func insertModels(models: [ItemData]) {
         self.dataSource.insertItems(models)
     }
     
@@ -65,7 +65,7 @@ class CollectionViewController: BaseViewController {
 }
 
 extension CollectionViewController: CollectionViewProtocol {
-    func getModelBy(index: Int) -> ItemModel? {
+    func getModelBy(index: Int) -> ItemData? {
         return self.dataSource.getModelBy(index: index)
     }
 }

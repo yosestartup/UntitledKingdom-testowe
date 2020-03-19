@@ -42,7 +42,7 @@ class TableViewController: BaseViewController {
         }
     }
     
-    func insertModels(models: [ItemModel]) {
+    func insertModels(models: [ItemData]) {
         self.dataSource.insertItems(models)
     }
     
@@ -54,7 +54,7 @@ class TableViewController: BaseViewController {
 }
 
 extension TableViewController: TableViewProtocol {
-    func getModelBy(index: Int) -> ItemModel? {
+    func getModelBy(index: Int) -> ItemData? {
         self.dataSource.getModelBy(index: index)
     }
 }

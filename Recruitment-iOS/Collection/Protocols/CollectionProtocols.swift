@@ -9,12 +9,13 @@
 import UIKit
 
 protocol CollectionViewProtocol: class {
-    func getModelBy(index: Int) -> ItemModel?
-    func insertModels(models: [ItemModel])
+    func showOkAlertController(title: String?, message: String?, callback: (() -> Void)?)
+    func getModelBy(index: Int) -> ItemData?
+    func insertModels(models: [ItemData])
 }
 
 protocol CollectionWireFrameProtocol: class {
-    func presentDetailsScreen(model: ItemModel, from: CollectionViewProtocol?)
+    func presentDetailsScreen(model: ItemData, from: CollectionViewProtocol?)
 }
 
 protocol CollectionPresenterProtocol: class {
@@ -23,6 +24,6 @@ protocol CollectionPresenterProtocol: class {
 }
 
 protocol CollectionInteractorProtocol: class {
-    func fetchList(completion: @escaping ([ItemModel]?) -> Void)
+    func fetchList(completion: @escaping (ItemsListApiResponseModel?, Error?) -> Void)
 }
 

@@ -15,7 +15,7 @@ protocol ItemsDataSourceDelegate: class {
 
 class ItemsDataSource {
     
-    private var items = [ItemModel]()
+    private var items = [ItemData]()
 
     weak var delegate: ItemsDataSourceDelegate?
     
@@ -27,7 +27,7 @@ class ItemsDataSource {
         return self.items.count
     }
 
-    func getModelBy(index: Int) -> ItemModel? {
+    func getModelBy(index: Int) -> ItemData? {
         return items[index]
     }
 
@@ -38,11 +38,11 @@ class ItemsDataSource {
         return cell
     }
     
-    func insertItems(_ items: [ItemModel]) {
+    func insertItems(_ items: [ItemData]) {
         self.updateWithItems(items)
     }
     
-    private func updateWithItems(_ items: [ItemModel]) {
+    private func updateWithItems(_ items: [ItemData]) {
         self.items = items
         DispatchQueue.main.async {
            self.delegate?.reloadData()

@@ -35,8 +35,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func display(model: ItemModel) {
-        self.title.text = model.name
-        self.backgroundColor = model.color
+    func display(model: ItemData) {
+        self.title.text = model.attributes.name
+        self.backgroundColor = model.attributes.color
     }
 }

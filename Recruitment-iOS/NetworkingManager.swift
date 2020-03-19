@@ -1,10 +1,12 @@
 //
-//  NetworkingManager.swift
-//  UKiOSTest
+//  NetworkingManagerGreat.swift
+//  Recruitment-iOS
 //
-//  Created by Paweł Sporysz on 15.09.2016.
-//  Copyright © 2016 Paweł Sporysz. All rights reserved.
+//  Created by Oleksandr Bambulyak on 19/03/2020.
+//  Copyright © 2020 Untitled Kingdom. All rights reserved.
 //
+
+import Foundation
 
 import UIKit
 
@@ -12,60 +14,68 @@ class NetworkingManager: NSObject {
 
     static var sharedManager = NetworkingManager()
     
-    func downloadItems(completion: @escaping([ItemModel]?) -> Void) {
-        request(filename: "Items.json") { dictionary in
-            let data = dictionary["data"]
-            let array = data as! Array<Dictionary<String, AnyObject>>
-            var result:[ItemModel] = []
-            for item in array {
-                let id = item["id"] as? String
-                let name = item["attributes"]?["name"] as? String
-                let preview = item["attributes"]?["preview"] as? String
-                let colorString = item["attributes"]?["color"] as? String
-                var color:UIColor?
-                switch colorString! {
-                case "Red": color = UIColor.red
-                case "Green": color = UIColor.green
-                case "Blue": color = UIColor.blue
-                case "Yellow": color = UIColor.yellow
-                case "Purple": color = UIColor.purple
-                default: color = UIColor.black
-                }
-                let itemModel = ItemModel(id: id!, name: name!, preview: preview!, color: color!)
-                result.append(itemModel)
+    func downloadItems(completion: @escaping(ItemsListApiResponseModel?, NSError?) -> Void) {
+        request(filename: "Items") { data, error in
+            
+            let jsonDecoder = JSONDecoder()
+            
+            if let error = error {
+                completion(nil, error)
+                return
             }
-            completion(result)
+            
+            guard let data = data else {
+                let error = NSError(domain: "Error with data", code: 401, userInfo: nil)
+                completion(nil, error)
+                return
+            }
+            
+            do {
+                let jsonModels = try jsonDecoder.decode(ItemsListApiResponseModel.self, from: data)
+                completion(jsonModels, nil)
+            } catch {
+                let error = NSError(domain: "Error with parsing", code: 0, userInfo: nil)
+                completion(nil, error)
+            }
         }
     }
     
-    func downloadItemWithID(_ id:String, completion: @escaping(ItemDetailsModel?) -> Void) {
-        let filename = "Item\(id).json"
-        request(filename: filename) { dictionary in
-            let data = dictionary["data"]
-            let attributes = data!["attributes"]! as! Dictionary<String, AnyObject>
-            let name = attributes["name"] as? String
-            let colorString = attributes["color"] as? String
-            var color:UIColor?
-            switch colorString! {
-            case "Red": color = UIColor.red
-            case "Green": color = UIColor.green
-            case "Blue": color = UIColor.blue
-            case "Yellow": color = UIColor.yellow
-            case "Purple": color = UIColor.purple
-            default: color = UIColor.black
-            }
-            let desc = attributes["desc"] as? String
-            let itemModelDetails = ItemDetailsModel(id: "", name: name!, preview: "", color: color!, desc: desc!)
-            completion(itemModelDetails)
+    func downloadItemWithID(_ id:String, completion: @escaping(ItemApiResponseModel?, NSError?) -> Void) {
+        let filename = "Item\(id)"
+        request(filename: filename) { data, error in
+           let jsonDecoder = JSONDecoder()
+               
+           if let error = error {
+               completion(nil, error)
+               return
+           }
+           
+           guard let data = data else {
+               let error = NSError(domain: "Error with data", code: 401, userInfo: nil)
+               completion(nil, error)
+               return
+           }
+           
+           do {
+               let jsonModel = try jsonDecoder.decode(ItemApiResponseModel.self, from: data)
+               completion(jsonModel, nil)
+           } catch {
+               let error = NSError(domain: "Error with paring", code: 0, userInfo: nil)
+               completion(nil, error)
+           }
         }
     }
     
-    private func request(filename:String, completionBlock:@escaping (Dictionary<String, AnyObject>) -> Void) {
+    private func request(filename: String, completion: @escaping (Data?, NSError?) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if let dictionary = JSONParser.jsonFromFilename(filename) {
-                completionBlock(dictionary)
-            } else {
-                completionBlock([:])
+            do {
+                let testBundle = Bundle(for: type(of: self))
+                let path = testBundle.path(forResource: filename, ofType: "json")
+                let data = try Data(contentsOf: URL(fileURLWithPath: path ?? ""))
+                completion(data, nil)
+            } catch {
+                let error = NSError(domain: "Error with loading", code: 404, userInfo: nil)
+                completion(nil, error)
             }
         }
     }

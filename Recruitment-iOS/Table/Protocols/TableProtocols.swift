@@ -9,12 +9,13 @@
 import UIKit
 
 protocol TableViewProtocol: class {
-    func insertModels(models: [ItemModel])
-    func getModelBy(index: Int) -> ItemModel?
+    func showOkAlertController(title: String?, message: String?, callback: (() -> Void)?)
+    func insertModels(models: [ItemData])
+    func getModelBy(index: Int) -> ItemData?
 }
 
 protocol TableWireFrameProtocol: class {
-    func presentDetailsScreen(model: ItemModel, from: TableViewProtocol?)
+    func presentDetailsScreen(model: ItemData, from: TableViewProtocol?)
 }
 
 protocol TablePresenterProtocol: class {
@@ -23,6 +24,6 @@ protocol TablePresenterProtocol: class {
 }
 
 protocol TableInteractorProtocol: class {
-    func fetchList(completion: @escaping ([ItemModel]?) -> Void)
+    func fetchList(completion: @escaping (ItemsListApiResponseModel?, Error?) -> Void)
 }
 

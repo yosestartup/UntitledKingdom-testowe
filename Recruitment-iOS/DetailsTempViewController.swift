@@ -8,42 +8,4 @@
 
 import UIKit
 
-class DetailsTempViewController: UIViewController {
-    
-    @IBOutlet weak var textView: UITextView!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let tableViewController = navigationController?.viewControllers[0] as! TableTempViewController
-        let selectedIndex = tableViewController.tableView.indexPathForSelectedRow?.row ?? 0
-        self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let tableViewController = navigationController?.viewControllers[0] as! TableTempViewController
-        let selectedIndex = tableViewController.tableView.indexPathForSelectedRow?.row ?? 0
-        let title = tableViewController.itemModels[selectedIndex].name
-        var newTitle = ""
-        for (index, letter) in title.enumerated() {
-            let newLetter = index % 2 == 0 ? String(letter).lowercased() : String(letter).uppercased()
-            newTitle += newLetter
-        }
-        
-        self.title = newTitle
-        //self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
-        
-       // NetworkingManager.sharedManager.delegate = self
-       // NetworkingManager.sharedManager.downloadItemWithID("1")
-    }
-    
-    func downloadedItems(_ items: [ItemModel]) {
-        
-    }
-    
-    func downloadedItemDetails(_ itemDetails: ItemDetailsModel) {
-        textView.text = itemDetails.desc
-    }
-
-}

@@ -27,8 +27,16 @@ extension CollectionPresenter: CollectionPresenterProtocol {
     }
     
     func viewLoaded() {
-        self.interactor.fetchList { (models) in
-            self.view?.insertModels(models: models ?? [])
+        self.interactor.fetchList { model,error  in
+            if let error = error {
+                self.view?.showOkAlertController(title: "Error", message: error.localizedDescription, callback: nil)
+                return
+            }
+            
+            if let model = model {
+                let convertedItems = ItemData.convert(from: model.data)
+                self.view?.insertModels(models: convertedItems)
+            }
         }
     }
     
